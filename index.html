@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="stylesheet" href="style.css"><title>CampusCare – Hostel Health Centre</title></head><body>
+<header><a class="logo" href="#home">❤️ CampusCare</a><nav><a href="#home">Home</a><a href="#book">Appointment</a><a href="#health">Health Tools</a><a href="#aid">First Aid</a><a href="#contacts">Contacts</a></nav><button class="icon" id="theme" aria-label="Toggle theme">🌓</button></header>
+<div class="hero" id="home">
+  <h1>Feeling unwell?<br>We’ve got your back.</h1>
+  <p>Your hostel’s one-stop health space: book a doctor, check symptoms, track your wellness and get help fast, day or night.</p>
+  <a class="btn white" href="#book">Book an appointment</a>
+  <div class="stats">
+    <div class="stat"><b>24×7</b><span>Emergency help</span></div>
+    <div class="stat"><b>9–5</b><span>Doctor on campus</span></div>
+    <div class="stat"><b>Free</b><span>For hostel students</span></div>
+  </div>
+</div>
+<main>
+  <h2>Everything you need</h2><p class="sub">Simple tools made for hostel life.</p>
+  <div class="grid">
+    <a class="card feat" href="#book"><span>📅</span><h3>Book a doctor</h3><p>4 easy steps. Pick a slot and walk in without waiting.</p></a>
+    <a class="card feat" href="#check"><span>🩺</span><h3>Symptom checker</h3><p>Tap how you feel and get simple self-care tips.</p></a>
+    <a class="card feat" href="#wellness"><span>🌈</span><h3>Daily wellness</h3><p>Water, mood, sleep and BMI in one place.</p></a>
+    <a class="card feat" href="#aid"><span>🚑</span><h3>First aid &amp; contacts</h3><p>Quick steps and important phone numbers.</p></a>
+  </div>
+<section id="book">
+  <h2>📅 Book an appointment</h2><p class="sub">Four quick steps. No queue, no paperwork.</p>
+  <div id="wiz" class="card">
+    <div class="steps" id="steps"><span>1 Doctor</span><span>2 Time</span><span>3 Details</span><span>4 Confirm</span></div>
+    <div class="pane" data-s="1"><h3 style="margin-top:0">Who do you want to see?</h3><div class="docs" id="docs"></div></div>
+    <div class="pane" data-s="2" hidden><h3 style="margin-top:0">Pick a date and time</h3><label for="dt">Date</label><input type="date" id="dt"><label>Available slots</label><div class="chips" id="slots"></div></div>
+    <div class="pane" data-s="3" hidden><h3 style="margin-top:0">Your details</h3>
+      <label for="n">Full name</label><input id="n" placeholder="e.g. Aarav Sharma">
+      <div class="row"><div><label for="r">Hostel &amp; room</label><input id="r" placeholder="B-Block, 214"></div><div><label for="ph">Phone (optional)</label><input id="ph" type="tel" placeholder="Mobile number"></div></div>
+      <label for="rs">What’s the problem? (optional)</label><textarea id="rs" rows="2" placeholder="Short description"></textarea></div>
+    <div class="pane" data-s="4" hidden><h3 style="margin-top:0">Check and confirm</h3><div class="sum" id="sum"></div></div>
+    <div class="pane" data-s="5" hidden><div class="ticket"><div style="font-size:2.4rem">✅</div><h3>You’re booked!</h3><b class="id" id="tid"></b><p class="sub" id="tinfo" style="margin:6px 0 0"></p><p class="sub" style="margin:10px 0 0">Reach the health centre 10 minutes early and show this ID at the desk.</p></div>
+      <p style="text-align:center"><button class="btn ghost" id="again">Book another</button></p></div>
+    <div id="err" class="result warn" hidden></div>
+    <div class="nav2" id="nav2"><button class="btn ghost" id="back">← Back</button><button class="btn" id="next">Next →</button></div>
+  </div>
+  <section><h2>My appointments</h2><p class="sub">Saved on this device. Tap ✕ to cancel.</p><div class="card" id="list"></div></section>
+</section><section id="health">
+  <h2>🌈 Health tools</h2><p class="sub">Check symptoms, build healthy habits and find help fast.</p>
+  <div class="tabs"><a class="chip" href="#check">Symptoms</a><a class="chip" href="#wellness">Wellness</a><a class="chip" href="#aid">First Aid</a><a class="chip" href="#contacts">Contacts</a></div>
+<section id="check"><h2>🩺 Symptom checker</h2><p class="sub">Tap what you feel to get simple self-care tips.</p>
+  <div class="card"><div class="chips" id="sym"></div><button class="btn" id="chk">Check</button><div id="chkres" class="result" hidden></div></div></section>
+<section id="wellness"><h2>💚 Daily wellness</h2><p class="sub">Small habits, big difference. Saved on this device.</p>
+  <div class="grid">
+    <div class="card"><h3 style="margin-top:0">💧 Water today</h3><div class="glasses" id="gl"></div><div class="bar"><i id="wb"></i></div><p class="sub" id="wt" style="margin:8px 0 0"></p></div>
+    <div class="card"><h3 style="margin-top:0">😊 How are you feeling?</h3><div class="moods" id="md"><button data-m="0">😄</button> <button data-m="1">🙂</button> <button data-m="2">😐</button> <button data-m="3">😟</button> <button data-m="4">😢</button></div><div id="mres" class="result" hidden></div></div>
+    <div class="card"><h3 style="margin-top:0">⚖️ BMI calculator</h3><div class="row"><div><label for="w">Weight (kg)</label><input type="number" id="w" min="20" max="250"></div><div><label for="h">Height (cm)</label><input type="number" id="h" min="100" max="230"></div></div><p><button class="btn" id="bmib">Calculate</button></p><div id="bmir" class="result" hidden></div></div>
+    <div class="card"><h3 style="margin-top:0">😴 Sleep goal</h3><label for="sl">Hours you slept last night</label><input type="range" id="sl" min="0" max="12" step="0.5" value="7"><p id="slt" class="sub" style="margin:8px 0 0"></p></div>
+  </div></section>
+<section id="aid"><h2>🚑 First aid basics</h2><p class="sub">Handy steps while help is on the way.</p>
+  <details><summary>🔥 Minor burn</summary><p>Cool under running tap water for 10–20 minutes. Don’t apply toothpaste, butter or ice. Cover loosely with a clean cloth. Seek help for large or blistering burns.</p></details>
+  <details><summary>🩸 Cut or bleeding</summary><p>Wash hands, press a clean cloth firmly on the wound and raise the area. Clean gently with water once bleeding stops. Go to the health centre if it won’t stop in 10 minutes.</p></details>
+  <details><summary>🤒 High fever</summary><p>Rest, drink plenty of fluids, wear light clothes. Inform your warden or roommate. Visit the doctor if fever lasts over 2 days or crosses 103°F (39.4°C).</p></details>
+  <details><summary>😮‍💨 Fainting</summary><p>Lay the person flat and raise their legs. Loosen tight clothes and give air. If not awake in a minute, call emergency immediately.</p></details>
+  <details><summary>🤢 Food poisoning</summary><p>Sip ORS or clean water often, rest, eat light foods like rice or banana. Report to the mess committee. See a doctor for blood in stool or severe weakness.</p></details></section>
+<section id="contacts"><h2>📞 Important contacts</h2><p class="sub">Replace these sample numbers with your hostel’s real ones.</p><div class="card" id="cts"></div></section>
+</section></main>
+<footer>CampusCare is for guidance only and does not replace a doctor. In an emergency, call immediately. 💙</footer><script src="script.js"></script></body></html>
